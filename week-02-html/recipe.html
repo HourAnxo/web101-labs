@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Classic Spaghetti Carbonara</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Lato:wght@300;400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --cream: #fdf6ec;
+      --dark: #1a1208;
+      --amber: #c8720a;
+      --warm-gray: #7a6a58;
+      --light-border: #e8dcc8;
+    }
+
+    body {
+      background-color: var(--cream);
+      color: var(--dark);
+      font-family: 'Lato', sans-serif;
+      font-weight: 300;
+      line-height: 1.8;
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: var(--dark);
+      color: var(--cream);
+      padding: 60px 40px 50px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('https://grantourismotravels.com/wp-content/uploads/2021/02/Authentic-Nom-Banh-Chok-Recipe-Cambodian-Khmer-Noodles-Copyright-2021-Terence-Carter-Grantourismo-Recipe.jpg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.25;
+    }
+
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.2rem, 5vw, 3.8rem);
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      position: relative;
+    }
+
+    header h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      font-weight: 400;
+      font-size: 1.15rem;
+      color: #c8a87a;
+      margin-top: 10px;
+      position: relative;
+    }
+
+    /* ── Layout ── */
+    main {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 50px 24px 80px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--amber);
+      border-bottom: 2px solid var(--light-border);
+      padding-bottom: 8px;
+      margin-bottom: 22px;
+    }
+
+    /* ── Photo ── */
+    .photo-wrap {
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+      margin-bottom: 14px;
+    }
+
+    .photo-wrap img {
+      width: 100%;
+      height: 520px;
+      object-fit: cover;
+    }
+
+    .photo-caption {
+      font-size: 0.82rem;
+      color: var(--warm-gray);
+      text-align: center;
+      font-style: italic;
+    }
+
+    /* ── Ingredients ── */
+    ul.ingredients {
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 10px 24px;
+    }
+
+    ul.ingredients li {
+      padding: 8px 0 8px 18px;
+      border-bottom: 1px solid var(--light-border);
+      position: relative;
+      font-size: 0.95rem;
+    }
+
+    ul.ingredients li::before {
+      content: '●';
+      position: absolute;
+      left: 0;
+      color: var(--amber);
+      font-size: 0.5rem;
+      top: 14px;
+    }
+
+    /* ── Steps ── */
+    ol.steps {
+      list-style: none;
+      counter-reset: step-counter;
+    }
+
+    ol.steps li {
+      counter-increment: step-counter;
+      display: flex;
+      gap: 20px;
+      margin-bottom: 22px;
+      align-items: flex-start;
+    }
+
+    ol.steps li::before {
+      content: counter(step-counter);
+      min-width: 36px;
+      height: 36px;
+      background: var(--amber);
+      color: #fff;
+      font-family: 'Playfair Display', serif;
+      font-weight: 700;
+      font-size: 1rem;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+
+    /* ── Nutrition Table ── */
+    .nutrition-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: white;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+
+    .nutrition-table th,
+    .nutrition-table td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--light-border);
+      text-align: left;
+    }
+
+    .nutrition-table th {
+      background-color: var(--amber);
+      color: white;
+      font-weight: 700;
+    }
+
+    .nutrition-table tr:hover {
+      background-color: #fff7ef;
+    }
+
+    /* ── Video ── */
+    .video-wrap {
+      position: relative;
+      padding-top: 56.25%;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.12);
+    }
+
+    .video-wrap iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--dark);
+      color: #888;
+      text-align: center;
+      padding: 24px;
+      font-size: 0.82rem;
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Khmer Noodle Food</h1>
+    <h2>The most delicious Khmer noodles you'll ever taste!</h2>
+  </header>
+
+  <main>
+
+    <!-- Photo -->
+    <section>
+      <div class="photo-wrap">
+        <img
+          src="https://www.cambodiaembassyuk.org/wp-content/uploads/2023/11/Num-Banh-Chok-Khmer.jpg"
+          alt="Khmer noodle soup"
+        />
+      </div>
+
+      <p class="photo-caption">
+        Khmer Noodle Soup (Nom Banh Chok)
+      </p>
+    </section>
+
+    <!-- Ingredients -->
+    <section>
+      <h3>Ingredients</h3>
+
+      <ul class="ingredients">
+        <li>ត្រីស្រស់ (ត្រីទឹកសាប)</li>
+        <li>ស្លឹកគ្រៃ</li>
+        <li>ខ្ទឹមស</li>
+        <li>រំដេង</li>
+        <li>ស្លឹកក្រូចសើច</li>
+        <li>រមៀត</li>
+        <li>ខ្ទឹមក្រហម/ខ្ទឹមស</li>
+        <li>ប្រហុក</li>
+      </ul>
+    </section>
+
+    <!-- Vegetables -->
+    <section>
+      <h3>Vegetables</h3>
+
+      <ul class="ingredients">
+        <li>ផ្កាចេក</li>
+        <li>ត្រសក់</li>
+        <li>សណ្តែកបណ្ដុះ</li>
+        <li>សណ្តែកកួរ</li>
+        <li>ត្រកួន</li>
+        <li>ស្លឹកមិន</li>
+        <li>ខ្ទឹស្លឹកបាស៊ីល</li>
+        <li>ស្លឹកឈើផ្សេងៗ</li>
+      </ul>
+    </section>
+
+    <!-- Instructions -->
+    <section>
+      <h3>Instructions</h3>
+
+      <ol class="steps">
+
+        <li>
+          <div>
+            រៀបចំគ្រឿងទឹកសម្ល<br>
+            លាងត្រីឲ្យស្អាត (ត្រីរ៉ស់ ឬ ត្រីផ្ទក់)<br>
+            ដាក់ឲ្យស្ងោរជាមួយទឹក<br>
+            ដាក់ស្លឹកគ្រៃ រមៀត រំដេង ខ្ទឹមស និងខ្ទឹមក្រហម<br>
+            ស្ងោររហូតដល់ត្រីឆ្អិនល្អ
+          </div>
+        </li>
+
+        <li>
+          <div>
+            បន្ថែមខ្ទឹមស និង ខ្ទឹមក្រហមចូល ដើម្បីឲ្យមានក្លិនឈ្ងុយ។<br>
+            បន្ថែមស្លឹកក្រូចសើច និងស្លឹកមិន។<br>
+            បន្ថែមប្រហុក (បើប្រើ)។<br>
+            រក្សាទុកទឹកសម្លនៅកំដៅទាបរហូតដល់ពេលត្រូវប្រើ។
+          </div>
+        </li>
+
+        <li>
+          <div>
+            លាយស្លឹកខ្ទឹម ស្លឹកជីរ និងម្រេចលើមុខ។
+          </div>
+        </li>
+
+      </ol>
+    </section>
+
+    <!-- Nutrition Information -->
+    <section>
+      <h3>Nutrition Information</h3>
+
+      <table class="nutrition-table">
+        <tr>
+          <th>Nutrient</th>
+          <th>Amount (Per Bowl)</th>
+        </tr>
+
+        <tr>
+          <td>Calories</td>
+          <td>320 kcal</td>
+        </tr>
+
+        <tr>
+          <td>Protein</td>
+          <td>18 g</td>
+        </tr>
+
+        <tr>
+          <td>Carbohydrates</td>
+          <td>42 g</td>
+        </tr>
+
+        <tr>
+          <td>Fat</td>
+          <td>8 g</td>
+        </tr>
+
+        <tr>
+          <td>Fiber</td>
+          <td>5 g</td>
+        </tr>
+
+        <tr>
+          <td>Sodium</td>
+          <td>780 mg</td>
+        </tr>
+      </table>
+    </section>
+
+    <!-- Video -->
+    <section>
+      <h3>Watch It! It's the way how to make it</h3>
+
+      <div class="video-wrap">
+        <iframe
+          src="https://www.youtube.com/embed/p_tTs1MXc-E"
+          title="YouTube video player"
+          allowfullscreen>
+        </iframe>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section>
+      <h3>About the Author</h3>
+      <p>Enjoyed this recipe? Head back to learn more about me.</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2026 · Web Development Lab · Week 02 · recipe.html</p>
+  </footer>
+
+</body>
+</html>
