@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bio</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <h1>My Personal Website</h1>
+  </header>
+
+  <!-- NAVIGATION -->
+  <nav>
+    <a href="home.html">Home</a>
+    <a href="projects.html">Projects</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- MAIN CONTENT -->
+  <main class="container">
+
+    <!-- INTRO SECTION -->
+    <section>
+      <h2>About Me</h2>
+      <p>Hello! My name is Student. This website introduces my projects and contact information.</p>
+
+      <img 
+        src="https://images.unsplash.com/photo-1498050108023-c5249f4df085" 
+        alt="A modern computer setup on a desk"
+      >
+    </section>
+
+    <!-- HOBBIES SECTION -->
+    <section>
+      <h2>My Hobbies</h2>
+      <ul>
+        <li>Web Development</li>
+        <li>Learning Chinese</li>
+        <li>Playing Games</li>
+        <li>Watching Movies</li>
+      </ul>
+    </section>
+
+    <!-- SCHEDULE SECTION -->
+    <section>
+      <h2>Weekly Schedule</h2>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Day</th>
+            <th>Activity</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Monday</td>
+            <td>Study HTML</td>
+          </tr>
+          <tr>
+            <td>Tuesday</td>
+            <td>Practice Coding</td>
+          </tr>
+          <tr>
+            <td>Wednesday</td>
+            <td>Do Homework</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- LINKS SECTION -->
+    <section>
+      <h2>My Links</h2>
+      <ul>
+        <li><a href="projects.html">My Projects</a></li>
+        <li><a href="https://github.com/HourAnxo" target="_blank">GitHub</a></li>
+        <li><a href="https://facebook.com" target="_blank">Facebook</a></li>
+      </ul>
+    </section>
+
+    <!-- CONTACT FORM -->
+    <section>
+      <h2>Contact Me</h2>
+
+      <form>
+        <!-- NAME -->
+        <label for="name">Name:</label><br>
+        <input type="text" id="name" name="name" required minlength="3"><br><br>
+
+        <!-- EMAIL -->
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <!-- PHONE -->
+        <label for="phone">Phone:</label><br>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{9,12}" placeholder="012345678"><br><br>
+
+        <!-- TOPIC -->
+        <label for="topic">Topic:</label><br>
+        <select id="topic" name="topic" required>
+          <option value="">Select a topic</option>
+          <option value="project">Project</option>
+          <option value="job">Job Opportunity</option>
+          <option value="other">Other</option>
+        </select><br><br>
+
+        <!-- MESSAGE -->
+        <label for="message">Message:</label><br>
+        <textarea id="message" name="message" required minlength="10"></textarea><br><br>
+
+        <!-- SUBMIT -->
+        <button type="submit">Send</button>
+      </form>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 Personal Website</p>
+  </footer>
+
+</body>
+</html>
